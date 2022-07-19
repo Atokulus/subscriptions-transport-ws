@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.11.1 (2022-07-19)
+
+- Fix `Error: WebSocket was closed before the connection was established` if running on node.js with latest `ws` package<br/>
+  [@Atokulus](https://github.com/Atokulus) in [323e3af](https://github.com/technokrat/subscriptions-transport-ws/commit/1514a1bb9fd760208c9dc6fa34bab77354252d0f)
+
 ## v0.11.0 (2021-11-02)
 
 - Support for `graphql@16` and bump minimal supported version to be `graphql@15.7.2`. As part of this change signatures for `ExecuteFunction` and `SubscribeFunction` were changed.  <br/>
