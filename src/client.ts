@@ -170,7 +170,12 @@ export class SubscriptionClient {
         this.sendMessage(undefined, MessageTypes.GQL_CONNECTION_TERMINATE, null);
       }
 
-      this.client.close();
+      try {
+        this.client.close();
+      } catch (e) {
+        console.warn(e) 
+      }
+      
       this.client.onopen = null;
       this.client.onclose = null;
       this.client.onerror = null;
