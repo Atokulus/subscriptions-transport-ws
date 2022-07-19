@@ -1,9 +1,9 @@
 # Changelog
 
-## v0.11.1 (2022-07-19)
+## v0.11.2 (2022-07-19)
 
-- Fix `Error: WebSocket was closed before the connection was established` if running on node.js with latest `ws` package<br/>
-  [@Atokulus](https://github.com/Atokulus) in [323e3af](https://github.com/technokrat/subscriptions-transport-ws/commit/1514a1bb9fd760208c9dc6fa34bab77354252d0f)
+- Prevent `Error: WebSocket was closed before the connection was established` from breaking reconnection if running on node.js with latest `ws` package.<br/>
+  [@Atokulus](https://github.com/Atokulus)
 
 ## v0.11.0 (2021-11-02)
 

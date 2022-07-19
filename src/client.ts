@@ -15,6 +15,7 @@ import $$observable from 'symbol-observable';
 import { GRAPHQL_WS } from './protocol';
 import { MIN_WS_TIMEOUT, WS_TIMEOUT } from './defaults';
 import MessageTypes from './message-types';
+import { CONNECTING } from 'ws';
 
 export interface Observer<T> {
   next?: (value: T) => void;
@@ -170,12 +171,10 @@ export class SubscriptionClient {
         this.sendMessage(undefined, MessageTypes.GQL_CONNECTION_TERMINATE, null);
       }
 
-      try {
+      if (this.client.readyState !== CONNECTING) {
         this.client.close();
-      } catch (e) {
-        console.warn(e) 
       }
-      
+
       this.client.onopen = null;
       this.client.onclose = null;
       this.client.onerror = null;
